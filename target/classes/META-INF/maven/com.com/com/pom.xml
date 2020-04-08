@@ -6,7 +6,7 @@
 	<artifactId>com</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<dependencies> 
+	<dependencies>
 
 	<!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
 	<dependency>

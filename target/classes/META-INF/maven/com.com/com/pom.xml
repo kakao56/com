@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.com</groupId>
 	<artifactId>com</artifactId>
-	<version>0.0.1-SNAPSHOT</version> 
+	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
 
 	<!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
-	<dependency>
+	<dependency> 
 	    <groupId>redis.clients</groupId>
 	    <artifactId>jedis</artifactId>
 	    <version>3.2.0</version>

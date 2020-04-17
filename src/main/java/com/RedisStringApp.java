@@ -10,6 +10,8 @@ public class RedisStringApp {
 		// TODO Auto-generated method stub
 
 		try {
+			
+			System.out.println(" ======================== RedisStringApp START ======================== \n");
 
 			JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
 			JedisPool pool = new JedisPool(jedisPoolConfig, "127.0.0.1", 6379);
@@ -55,7 +57,7 @@ public class RedisStringApp {
 			Jedis jedis = pool.getResource();
 			jedis.auth("redis6379");
 						
-			System.out.println("\n========================================================================================================");		
+			System.out.println("\n-------------------------------------------------------------------------------------------------------");		
 			
 			System.out.println("\njedis.keys(\"*\") :	"+jedis.keys("*"));//jedis.keys("*") 모든 key 조회
 			System.out.println("\njedis.keys(\"*8\") :	"+jedis.keys("*8"));//jedis.keys("*8") 규칙에 맞는 key 조회
@@ -65,7 +67,7 @@ public class RedisStringApp {
 			System.out.println("\njedis.strlen(\"rVal11\") :	"+jedis.strlen("rVal11"));//jedis.strlen(key) value의 길이
 			System.out.println("\njedis.ttl(\"rVal11\") :	"+jedis.ttl("rVal11"));//jedis.ttl(key) key의 남은 시간
 			
-			System.out.println("\n========================================================================================================");	
+			System.out.println("\n-------------------------------------------------------------------------------------------------------");	
 			
 			jedis.mset("rVal12", "2"
 					,"rVal14", "4"
@@ -83,7 +85,7 @@ public class RedisStringApp {
 			
 			System.out.println("\njedis.mget(\"rVal11\",\"rVal13\",\"rVal10\"):	"+jedis.mget("rVal11","rVal13","rVal10")); //다중 String 조회	
 			
-			System.out.println("\n========================================================================================================");	
+			System.out.println("\n-------------------------------------------------------------------------------------------------------");	
 			
 			jedis.incr("rVal13");//1증가			
 			
@@ -106,8 +108,10 @@ public class RedisStringApp {
 			System.out.println("\njedis.append(\"rVal13\", \"    문자열 추가\") :	"+jedis.get("rVal13"));
 			
 			jedis.save(); //C:\redis dump.rdb 저장
+			System.out.println("\njedis.save()");
 			
 			jedis.flushAll();// 모든 key/value 제거
+			System.out.println("\njedis.flushAll()");
 			
 			System.out.println("\njedis.keys(\"*\") :	"+jedis.keys("*"));
 			System.out.println("\njedis.time() :	"+jedis.time()); //unix time in seconds
@@ -118,7 +122,7 @@ public class RedisStringApp {
 			pool.destroy();
 
 			
-			System.out.println("\nRedisStringApp END!!!");
+			System.out.println("\n ======================== RedisStringApp END ======================== ");
 
 		} catch (Exception e) {
 			// TODO: handle exception
